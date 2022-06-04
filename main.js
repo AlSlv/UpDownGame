@@ -7,7 +7,7 @@
 //5번의 기회를 다쓰면 게임이 끝남(더이상 추측 불가, 버튼이 disable)
 //유저가 1~100 범위 밖에 숫자 입력하면 알려줌. 기회를 깎지 않는다
 //유저가 이미 입력한 숫자를 또입력하면 기회를 깎지 않음
-let chance = 5;
+let chance = 5; // 남은 기회
 let computerNum = 0;
 let gameOver = false;
 let userInput = document.getElementById("user-input")
@@ -15,7 +15,7 @@ let resultArea = document.getElementById("result-area")
 let chanceArea = document.getElementById("chance-area")
 let playButton = document.getElementById("play-button")
 let resetButton = document.getElementById("reset-button")
-let userHistory = [];
+let userHistory = []; // 유저가 입력한 숫자들 리스트
 
 playButton.addEventListener("click",play)
 resetButton.addEventListener("click",reset)
@@ -74,6 +74,7 @@ function reset(){
     userInput.value = "";
     randomNum();
     gameOver = false;
+    playButton.disabled = false;
     userHistory = [];
     chance = 5;
     chanceArea.textContent = `남은 기회 : ${chance}번`
