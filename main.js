@@ -34,7 +34,7 @@ function play(){
     let userValue = userInput.value;
 
     
-    if(userValue < 1 || userValue > 100){
+    if(userValue < 1 || userValue > 50){
         resultArea.textContent = "1~50 사이의 숫자를 입력해주세요."
         return; // chance 안깎이고 밑에꺼 실행안시키고 그냥 종료
     }
